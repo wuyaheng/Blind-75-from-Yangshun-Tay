@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blind 75 from Yangshun Tay</title> 
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Playfair+Display:700,400,900,400italic,700italic,900italic|Merriweather:400,300,700,900,300italic,400italic,700italic,900italic|Anonymous+Pro:400,700,400italic,700italic|Roboto:400,700' />
+    <link rel='stylesheet' type='text/css' href='https://cdn.rawgit.com/google/code-prettify/master/styles/desert.css' />
+    <link rel='stylesheet' type='text/css' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css' />
+
+
+<style>
+body {
+  margin:50px 10px;
+}
+
+#blog {
+  display: block; 
+  width: auto!important; 
+  overflow: hidden; 
+} 
+
+a, a.named_anchor {
+    text-decoration: inherit;
+    font-style: inherit;
+    color: inherit;
+  }
+  
+
+
+h1 {
+    letter-spacing: -0.06em;
+    margin-bottom: 0.05em;
+    line-height: 1em;
+}
+
+.byline {
+    font: normal normal 400 1.3em;
+    margin-bottom: .8em;
+    letter-spacing: -0.04em;
+  }
+
+.pubdate {
+    font: normal normal 400 1em;
+    text-transform: uppercase;
+    margin-bottom: 1em;
+  }
+
+.pubtime:before {
+    font-family: 'FontAwesome';
+    font-size: .8em;
+    content:'\f054';
+    margin: 0em .5em;
+}
+
+hr {
+    border: 0;
+    border-bottom: 4px double;
+    height: 0.15em;
+}
+
+
+.topic {
+    font: normal normal 900 .8em;
+    text-transform: uppercase;
+    margin-bottom: 1em;
+  }
+
+#article {
+  font: normal normal 400 1em/2em;
+  line-height: 2em;
+  text-align: justify;
+}
+
+a, a:link {
+    text-decoration: none;
+    cursor: pointer;
+    color: #1b98e0;
+}  
+
+.shade {
+  background: #eee;
+  padding: 0 0.2em;
+}
+    
+h2, h3, h4, h5 { 
+    font-weight: 650; 
+    font-size: 1.25em; 
+}
+
+
+p { 
+    margin-bottom:2em; 
+    line-height: 2em;
+}
+    
+
+/* p:first-child:first-letter { 
+      font-weight: 900;
+      float: left; 
+      font-size: 4em; 
+      line-height: 1em; 
+      padding: 0em 0.1em 0em 0em;
+} */
+
+h6 {
+    color: #ee856b;
+}
+pre {
+    background: #f4f4f4;
+    border: 1px solid #ddd;
+    border-left: 3px solid #F2957E;
+    color: #666;
+    page-break-inside: avoid;
+    font-family: monospace;
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 1.6em;
+    max-width: 100%;
+    overflow: auto;
+    padding: 1em 1.5em;
+    display: block;
+    word-wrap: break-word;
+}
+
+pre span {
+  color: #339b4b;
+}
+
+.slideSample {
+  width: 50%;
+}
+
+@media only screen and (max-width: 768px) {
+  .slideSample {
+    width: 80%;
+  }
+}
+
+    </style>
+</head>
+<body>
+    
+
+
+    
+<div class="container">
+    <div id="blog">
+      <div id="title">
+        <div class="pubdate">28 May 2022<hr/></div> 
+        <h1>Blind 75 from Yangshun Tay</h1>
+        <div class="byline">by Phoebe Yaheng Wu</div> 
+        <!-- <div class="topic">Data</div> -->
+      </div>
+      
+    
+      
+      <!-- Article text -->
+      <!-- <a class="named_anchor" name="2549202418499648455"></a> -->
+      <div id="article">
+        <div id="content"> 
+        <h6>&bull; Array & Hash Table</h6>
+          <p class="text-center text-muted"><a href="https://leetcode.com/problems/two-sum/" target="_blank">https://leetcode.com/problems/two-sum/</a></p>
+<pre>
+class Solution:
+  def twoSum(self, nums: List[int], target: int) -> List[int]:
+        
+      lookup = {}
+        
+      for i in range(len(nums)):
+          otherNum = target - nums[i]
+            
+          if otherNum in lookup:
+              return [i, lookup[otherNum]]
+            
+          lookup[nums[i]] = i 
+</pre>
+
+<p class="text-center text-muted"><a href="https://leetcode.com/problems/best-time-to-buy-and-sell-stock/" target="_blank">https://leetcode.com/problems/best-time-to-buy-and-sell-stock/</a></p>
+
+<p class="text-center text-muted"><a href="https://leetcode.com/problems/contains-duplicate/" target="_blank">https://leetcode.com/problems/contains-duplicate/</a></p>
+
+<p class="text-center text-muted"><a href="https://leetcode.com/problems/product-of-array-except-self/" target="_blank">https://leetcode.com/problems/product-of-array-except-self/</a></p>
+
+<p class="text-center text-muted"><a href="https://leetcode.com/problems/maximum-product-subarray/" target="_blank">https://leetcode.com/problems/maximum-product-subarray/</a></p>
+
+
+
+<h6>&bull; Dynamic Programming</h6>
+<p class="text-center text-muted"><a href="https://leetcode.com/problems/maximum-subarray/" target="_blank">https://leetcode.com/problems/maximum-subarray/</a></p>
+<pre>
+class Solution:
+  def maxSubArray(self, nums: List[int]) -> int:
+        
+      dp = [None] * len(nums)
+      max_value = nums[0]
+        
+      dp[0] = nums[0]
+        
+      for i in range(1, len(nums)):
+          dp[i] = max(dp[i-1] + nums[i], nums[i])
+            
+          max_value = max(dp[i], max_value)
+            
+      return max_value
+</pre>
+
+</div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="page-footer font-small blue pt-4">
+  
+      <!-- Copyright -->
+      <div class="footer-copyright text-center py-3">
+        
+        <div id="disqus_thread"></div>
+      </div>
+      <!-- Copyright -->
+    
+    </footer>
+    <!-- Footer -->
+    
+    </div>
+    <!-- Scripts --> 
+
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/prettify.js"></script>
+    <!-- Script for pocket button -->
+    <script type="text/javascript">!function(d,i){if(!d.getElementById(i)){var j=d.createElement("script");j.id=i;j.src="https://widgets.getpocket.com/v1/j/btn.js?v=1";var w=d.getElementById(i);d.body.appendChild(j);}}(document,"pocket-btn-js");</script>
+    <!-- Print friendly -->
+    <script>var pfHeaderImgUrl = '';var pfHeaderTagline = '';var pfdisableClickToDel = 0;var pfHideImages = 0;var pfImageDisplayStyle = 'right';var pfDisablePDF = 0;var pfDisableEmail = 0;var pfDisablePrint = 0;var pfCustomCSS = '';var pfBtVersion='1';(function(){var js, pf;pf = document.createElement('script');pf.type = 'text/javascript';if ('https:' === document.location.protocol){js='https://pf-cdn.printfriendly.com/ssl/main.js'}else{js='http://cdn.printfriendly.com/printfriendly.js'}pf.src=js;document.getElementsByTagName('head')[0].appendChild(pf)})();</script>
+    <!-- Share button / http://sharebutton.co
+    <script src="https://cdn.rawgit.com/carrot/share-button/master/src/share-button.js"></script>-->
+
+
+    <script>
+      /**
+      *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+      *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+      /*
+      var disqus_config = function () {
+      this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+      this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+      };
+      */
+      (function() { // DON'T EDIT BELOW THIS LINE
+      var d = document, s = d.createElement('script');
+      s.src = 'https://wuyaheng.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+      })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</body>
+</html>
+
+
