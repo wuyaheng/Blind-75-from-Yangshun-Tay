@@ -194,6 +194,19 @@ class Solution:
 </pre>
 
 <p class="text-center text-muted"><a href="https://leetcode.com/problems/contains-duplicate/" target="_blank">https://leetcode.com/problems/contains-duplicate/</a></p>
+<pre>
+class Solution:
+  def containsDuplicate(self, nums: List[int]) -> bool:
+      lookup = {}
+      
+      for num in nums:
+          if num in lookup:
+              return True
+          
+          lookup[num] = lookup.get(num, 0) + 1
+          
+      return False   
+</pre>
 
 <p class="text-center text-muted"><a href="https://leetcode.com/problems/product-of-array-except-self/" target="_blank">https://leetcode.com/problems/product-of-array-except-self/</a></p>
 
