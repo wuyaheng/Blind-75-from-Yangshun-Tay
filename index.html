@@ -381,6 +381,20 @@ class Solution:
 <p class="text-center text-muted"><a href="https://leetcode.com/problems/sum-of-two-integers/" target="_blank">https://leetcode.com/problems/sum-of-two-integers/</a></p>
 
 <p class="text-center text-muted"><a href="https://leetcode.com/problems/number-of-1-bits/" target="_blank">https://leetcode.com/problems/number-of-1-bits/</a></p>
+<pre>
+class Solution:
+  def hammingWeight(self, n: int) -> int:
+      cnt = 0
+      
+      while n:
+          
+          if n & 1 > 0:
+              cnt += 1
+              
+          n = n >> 1  
+      
+      return cnt
+</pre>
 <p class="text-center text-muted"><a href="https://leetcode.com/problems/counting-bits/" target="_blank">https://leetcode.com/problems/counting-bits/</a></p>
 <p class="text-center text-muted"><a href="https://leetcode.com/problems/missing-number/" target="_blank">https://leetcode.com/problems/missing-number/</a></p>
 <p class="text-center text-muted"><a href="https://leetcode.com/problems/reverse-bits/" target="_blank">https://leetcode.com/problems/reverse-bits/</a></p>
