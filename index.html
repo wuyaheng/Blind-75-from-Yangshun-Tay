@@ -389,6 +389,20 @@ class Solution:
 
 <h6>&bull; Binary</h6> 
 <p class="text-center text-muted"><a href="https://leetcode.com/problems/sum-of-two-integers/" target="_blank">https://leetcode.com/problems/sum-of-two-integers/</a></p>
+<pre>
+class Solution:
+  def getSum(self, a: int, b: int) -> int:
+      MASK = 0xFFF
+      INT_MAX = 0x7FF
+        
+      sumVal = (a ^ b) & MASK      
+      carry = ((a & b) << 1) & MASK
+        
+      while carry:
+          return self.getSum(sumVal, carry)
+        
+      return sumVal if sumVal <= INT_MAX else ~ (sumVal ^ MASK)
+</pre>
 
 <p class="text-center text-muted"><a href="https://leetcode.com/problems/number-of-1-bits/" target="_blank">https://leetcode.com/problems/number-of-1-bits/</a></p>
 <pre>
