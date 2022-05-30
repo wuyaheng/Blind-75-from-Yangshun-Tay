@@ -444,6 +444,19 @@ class Solution:
       return k
 </pre>
 <p class="text-center text-muted"><a href="https://leetcode.com/problems/reverse-bits/" target="_blank">https://leetcode.com/problems/reverse-bits/</a></p>
+<pre>
+class Solution:
+  def reverseBits(self, n: int) -> int:
+      ans = 0
+        
+      for _ in range(32):        
+          ans <<= 1
+          ans |= n & 1
+          n >>= 1
+            
+      return ans
+</pre>
+
 
 </div>
       </div>
