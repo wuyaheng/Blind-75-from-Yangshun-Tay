@@ -431,6 +431,18 @@ class Solution:
       return ans
 </pre>
 <p class="text-center text-muted"><a href="https://leetcode.com/problems/missing-number/" target="_blank">https://leetcode.com/problems/missing-number/</a></p>
+<pre>
+class Solution:
+  def missingNumber(self, nums: List[int]) -> int:
+      n = len(nums)       
+      k = 0
+        
+      for i in range(1, n + 1):
+          k ^= i
+          k ^= nums[i - 1]
+
+      return k
+</pre>
 <p class="text-center text-muted"><a href="https://leetcode.com/problems/reverse-bits/" target="_blank">https://leetcode.com/problems/reverse-bits/</a></p>
 
 </div>
