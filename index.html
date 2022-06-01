@@ -998,6 +998,19 @@ class Solution:
       return max(self.maxDepth(root.left), self.maxDepth(root.right)) + 1
 </pre>
 
+<p class="text-center text-muted"><a href="https://leetcode.com/problems/same-tree/" target="_blank">https://leetcode.com/problems/same-tree/</a></p>
+<pre>
+class Solution:
+  def isSameTree(self, p: Optional[TreeNode], q: Optional[TreeNode]) -> bool:
+      if p is None and q is None:
+          return True
+        
+      if p is None or q is None:
+          return False
+            
+      return  p.val == q.val and self.isSameTree(p.left, q.left) and self.isSameTree(p.right, q.right) 
+</pre>
+
 </div>
       </div>
     </div>
