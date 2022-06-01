@@ -1075,6 +1075,80 @@ class Solution:
       return ans
 </pre>
 
+<p class="text-center text-muted"><a href="https://leetcode.com/problems/subtree-of-another-tree/" target="_blank">https://leetcode.com/problems/subtree-of-another-tree/</a></p>
+<pre>
+class Solution:
+  def isSubtree(self, root: Optional[TreeNode], subRoot: Optional[TreeNode]) -> bool:            
+      if self.sameTree(root, subRoot):
+          return True
+        
+      return (root.left != None and self.isSubtree(root.left, subRoot)) or (root.right != None and self.isSubtree(root.right, subRoot))
+    
+    
+  def sameTree(self, a, b):
+      if a == None and b == None:
+          return True
+
+      return a != None and b != None and a.val == b.val and self.sameTree(a.left, b.left) and self.sameTree(a.right, b.right)
+</pre> 
+
+<p class="text-center text-muted"><a href="https://leetcode.com/problems/validate-binary-search-tree/" target="_blank">https://leetcode.com/problems/validate-binary-search-tree/</a></p>
+<pre>
+class Solution:  
+  def isValidBST(self, root: Optional[TreeNode]) -> bool:
+        
+      def validate(node, low, high):
+          if not node:
+              return True
+            
+          if node.val <= low or node.val >= high:
+              return False
+            
+          return validate(node.left, low, node.val) and validate(node.right, node.val, high)
+        
+      return validate(root, -float("inf"), float("inf"))
+</pre> 
+
+<p class="text-center text-muted"><a href="https://leetcode.com/problems/kth-smallest-element-in-a-bst/" target="_blank">https://leetcode.com/problems/kth-smallest-element-in-a-bst/</a></p>
+<pre>
+class Solution:
+  def kthSmallest(self, root: Optional[TreeNode], k: int) -> int:
+      self.ans = None   
+      self.k = k
+        
+      def dfs(node):
+            
+          if node is None:
+              return
+            
+          dfs(node.left)
+
+          self.k -= 1  
+            
+          if self.k == 0:
+              self.ans = node.val
+              return
+            
+          dfs(node.right)
+            
+      dfs(root)
+      return self.ans
+</pre> 
+
+<p class="text-center text-muted"><a href="https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/" target="_blank">https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/</a></p>
+<pre>
+class Solution:
+  def lowestCommonAncestor(self, root: 'TreeNode', p: 'TreeNode', q: 'TreeNode') -> 'TreeNode':   
+      if p.val > root.val and q.val > root.val:
+          return self.lowestCommonAncestor(root.right, p, q)
+            
+      elif p.val < root.val and q.val < root.val:
+          return self.lowestCommonAncestor(root.left, p, q)
+            
+      else:
+          return root
+</pre> 
+
 </div>
       </div>
     </div>
