@@ -779,7 +779,7 @@ class Solution:
 <pre>
 class Solution:
   def isAnagram(self, s: str, t: str) -> bool:
-      tracker = collections.defaultdict(int)
+      tracker = defaultdict(int)
 
       for c in s:
           tracker[c] += 1
