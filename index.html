@@ -899,6 +899,32 @@ class Solution:
       return True
 </pre>
 
+<p class="text-center text-muted"><a href="https://leetcode.com/problems/encode-and-decode-strings/" target="_blank">https://leetcode.com/problems/encode-and-decode-strings/</a></p>
+<pre>
+class Codec:
+  def encode(self, strs: List[str]) -> str:
+      encoded = ''
+        
+      for s in strs:
+          for c in s:
+              encoded += str(ord(c)) + ';'        
+          encoded += '#'
+            
+      return encoded
+
+  def decode(self, s: str) -> List[str]:
+      decoded = []
+        
+      for st in s.split('#')[:-1]:
+          word = ''
+            
+          for char in st.split(';')[:-1]:
+              word += chr(int(char))
+          decoded.append(word)
+            
+      return decoded
+</pre>
+
 </div>
       </div>
     </div>
