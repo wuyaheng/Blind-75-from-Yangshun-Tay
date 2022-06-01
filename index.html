@@ -985,6 +985,19 @@ class Solution:
       return ans
 </pre>
 
+<hr>
+<h6>&bull; Tree</h6> 
+
+<p class="text-center text-muted"><a href="https://leetcode.com/problems/maximum-depth-of-binary-tree/" target="_blank">https://leetcode.com/problems/maximum-depth-of-binary-tree/</a></p>
+<pre>
+class Solution:
+  def maxDepth(self, root: Optional[TreeNode]) -> int:
+      if root is None:
+          return 0
+        
+      return max(self.maxDepth(root.left), self.maxDepth(root.right)) + 1
+</pre>
+
 </div>
       </div>
     </div>
