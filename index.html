@@ -713,6 +713,26 @@ class Solution:
       return ans
 </pre>
 
+<p class="text-center text-muted"><a href="https://leetcode.com/problems/non-overlapping-intervals/" target="_blank">https://leetcode.com/problems/non-overlapping-intervals/</a></p>
+<pre>
+class Solution:
+  def eraseOverlapIntervals(self, intervals: List[List[int]]) -> int:
+      r = float('-inf')
+      ans = 0
+        
+      intervals.sort()
+        
+      for x in intervals:
+          if r > x[0]:
+              r = min(r, x[1])
+              ans += 1
+                
+          else:
+              r = x[1]
+                
+      return ans
+</pre>
+
 </div>
       </div>
     </div>
