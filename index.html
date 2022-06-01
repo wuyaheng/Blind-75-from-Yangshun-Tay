@@ -1044,6 +1044,37 @@ class Solution:
       return self.ans
 </pre>
 
+<p class="text-center text-muted"><a href="https://leetcode.com/problems/binary-tree-level-order-traversal/" target="_blank">https://leetcode.com/problems/binary-tree-level-order-traversal/</a></p>
+<pre>
+class Solution:
+  def levelOrder(self, root: Optional[TreeNode]) -> List[List[int]]:        
+      ans = []
+        
+      if root is None:
+          return ans
+        
+      q = deque([root])
+
+      while q:
+            
+          level = []
+            
+          for _ in range(len(q)):
+                
+              node = q.popleft()
+              level.append(node.val)
+                
+              if node.left:
+                  q.append(node.left)
+                    
+              if node.right:
+                  q.append(node.right)
+                    
+          ans.append(level)
+        
+      return ans
+</pre>
+
 </div>
       </div>
     </div>
