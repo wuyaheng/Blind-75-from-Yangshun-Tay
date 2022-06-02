@@ -795,6 +795,30 @@ class Solution:
       return True
 </pre>
 
+<p class="text-center text-muted"><a href="https://leetcode.com/problems/meeting-rooms-ii/" target="_blank">https://leetcode.com/problems/meeting-rooms-ii/</a></p>
+<pre>
+class Solution:
+  def minMeetingRooms(self, intervals: List[List[int]]) -> int:
+      start = sorted([i[0] for i in intervals])
+      end = sorted([i[1] for i in intervals])
+        
+      ans, cnt = 0, 0
+      s, e = 0, 0
+        
+      while s < len(intervals):
+          if start[s] < end[e]:
+              s += 1
+              cnt += 1
+                
+          else:
+              e += 1
+              cnt -= 1
+                
+          ans = max(ans, cnt)
+            
+      return ans
+</pre>
+
 <hr>
 <h6>&bull; String</h6> 
 
