@@ -490,6 +490,21 @@ class Solution:
       return -1 if dp[amount] == float('inf') else dp[amount]
 </pre>
 
+<p class="text-center text-muted"><a href="https://leetcode.com/problems/longest-increasing-subsequence/" target="_blank">https://leetcode.com/problems/longest-increasing-subsequence/</a></p>
+<pre>
+class Solution:
+  def lengthOfLIS(self, nums: List[int]) -> int:
+      ans = [1] * len(nums)
+        
+      for i in range(len(nums) - 1, -1, -1):
+          for j in range(i + 1, len(nums)):
+                
+              if nums[i] < nums[j]:
+                  ans[i] = max(ans[i], ans[j] + 1)
+                    
+      return max(ans)
+</pre>
+
 <p class="text-center text-muted"><a href="https://leetcode.com/problems/longest-common-subsequence/" target="_blank">https://leetcode.com/problems/longest-common-subsequence/</a></p>
 <pre>
 class Solution:
