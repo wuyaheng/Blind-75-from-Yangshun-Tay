@@ -1170,6 +1170,22 @@ class Solution:
       return a != None and b != None and a.val == b.val and self.sameTree(a.left, b.left) and self.sameTree(a.right, b.right)
 </pre> 
 
+<p class="text-center text-muted"><a href="https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/" target="_blank">https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/</a></p>
+<pre>
+class Solution:
+  def buildTree(self, preorder: List[int], inorder: List[int]) -> Optional[TreeNode]:
+      if not preorder or not inorder:
+          return None
+        
+      root = TreeNode(preorder[0])
+      mid = inorder.index(preorder[0])
+        
+      root.left = self.buildTree(preorder[1 : mid + 1], inorder[ : mid])
+      root.right = self.buildTree(preorder[mid + 1: ], inorder[mid + 1: ])
+        
+      return root
+</pre> 
+
 <p class="text-center text-muted"><a href="https://leetcode.com/problems/validate-binary-search-tree/" target="_blank">https://leetcode.com/problems/validate-binary-search-tree/</a></p>
 <pre>
 class Solution:  
