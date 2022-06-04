@@ -1513,6 +1513,43 @@ class Solution:
       return False
 </pre> 
 
+<hr>
+<h6>&bull; Linked List</h6> 
+
+<p class="text-center text-muted"><a href="https://leetcode.com/problems/reverse-linked-list/" target="_blank">https://leetcode.com/problems/reverse-linked-list/</a></p>
+<pre>
+class Solution:
+  def reverseList(self, head: Optional[ListNode]) -> Optional[ListNode]:
+      if head == None or head.next == None:
+          return head
+        
+      pre = None
+      cur = head
+      nxt = None
+        
+      while cur != None:
+          nxt = cur.next
+          cur.next = pre
+          pre = cur
+          cur = nxt
+        
+      return pre 
+</pre>
+
+<pre>
+class Solution:
+  def reverseList(self, head: Optional[ListNode]) -> Optional[ListNode]:
+      if head == None or head.next == None:
+          return head
+        
+      ans = self.reverseList(head.next)
+        
+      head.next.next = head
+      head.next = None
+        
+      return ans    
+</pre> 
+
 </div>
       </div>
     </div>
