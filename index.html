@@ -1385,6 +1385,35 @@ class MedianFinder:
       return (-1 * self.pqMin[0] + self.pqMax[0]) / 2
 </pre>
 
+
+<hr>
+<h6>&bull; Matrix</h6> 
+
+<p class="text-center text-muted"><a href="https://leetcode.com/problems/set-matrix-zeroes/" target="_blank">https://leetcode.com/problems/set-matrix-zeroes/</a></p>
+<pre>
+class Solution:
+  def setZeroes(self, matrix: List[List[int]]) -> None:
+      if not matrix:
+          return []
+        
+      m = len(matrix)
+      n = len(matrix[0])
+        
+      rowflag = [1] * m
+      colflag = [1] * n
+        
+      for row in range(m):
+          for col in range(n):
+              if matrix[row][col] == 0:
+                  rowflag[row] = 0
+                  colflag[col] = 0
+                    
+      for row in range(m):
+          for col in range(n):
+              if rowflag[row] == 0 or colflag[col] == 0:
+                  matrix[row][col] = 0
+</pre>
+
 </div>
       </div>
     </div>
