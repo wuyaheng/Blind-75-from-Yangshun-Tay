@@ -1584,6 +1584,26 @@ class Solution:
       return list2
 </pre>
 
+<p class="text-center text-muted"><a href="https://leetcode.com/problems/merge-k-sorted-lists/" target="_blank">https://leetcode.com/problems/merge-k-sorted-lists/</a></p>
+<pre>
+class Solution:
+  def mergeKLists(self, lists: List[Optional[ListNode]]) -> Optional[ListNode]:
+      pq = []
+      for i in lists:
+          while i != None:
+              heapq.heappush(pq, i.val)
+              i = i.next
+        
+      ans = ListNode(-1) 
+      cur = ans  
+      while pq:
+          t = ListNode(heapq.heappop(pq))
+          cur.next = t
+          cur = cur.next
+            
+      return ans.next
+</pre> 
+
 </div>
       </div>
     </div>
