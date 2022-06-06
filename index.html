@@ -172,7 +172,7 @@ pre span {
 
         <p>Below are the Blind 75 Leetcode problems organized by topic as well as my solutions to them.</p>
 <hr>
-        <h6>&bull; Array & Hash Table</h6>
+        <h6>&bull; Array & Map</h6>
           <p class="text-center text-muted"><a href="https://leetcode.com/problems/two-sum/" target="_blank">https://leetcode.com/problems/two-sum/</a></p>
 <pre>
 class Solution:
@@ -1734,6 +1734,36 @@ class Solution:
                     
       return numCourses == 0
 </pre> 
+
+<p class="text-center text-muted"><a href="https://leetcode.com/problems/number-of-islands/" target="_blank">https://leetcode.com/problems/number-of-islands/</a></p>
+<pre>
+class Solution:
+  def numIslands(self, grid: List[List[str]]) -> int:
+      directions = [[1, 0], [-1, 0], [0, 1], [0, -1]]
+      ans = 0
+      m = len(grid)
+      n = len(grid[0])
+        
+      def dfs(grid, i, j):
+          grid[i][j] = '0'
+            
+          for d in directions:
+              ni = i + d[0]
+              nj = j + d[1]
+                
+              if ni < 0 or nj < 0 or ni == len(grid) or nj == len(grid[0]) or grid[ni][nj] == '0':
+                  continue
+                
+              dfs(grid, ni, nj)
+                
+      for i in range(m):
+          for j in range(n):
+              if grid[i][j] == '1':
+                  dfs(grid, i, j)
+                  ans += 1
+                    
+      return ans
+</pre>
 
 </div>
       </div>
